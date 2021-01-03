@@ -14,13 +14,13 @@ if (isset($_POST['time_in'])) {
 	$shift = mysqli_real_escape_string($conn, $_POST['shift']);
 	$date = mysqli_real_escape_string($conn, $_POST['date']);
 	$time = mysqli_real_escape_string($conn, $_POST['time']);
-	$sql = "insert into attendance_timesheet (emp_id,fname,shift, date, time_in, time_out) values ('$emp_id','$fname','$shift', CURDATE(), CURTIME(), CURTIME())";
+	$sql = "insert into attendance_timesheet (emp_id,fname,shift, date, time_in) values ('$emp_id','$fname','$shift', CURDATE(), CURTIME())";
 	if (mysqli_query($conn, $sql)) {
 		echo "Sign In successfully !";
 	} else {
 		echo "Error: " . $sql . ":-" . mysqli_error($conn);
 	}
-	mysqli_close($conn);
+	
 }
 ?>
 <!-- -------------Sign Out Button----------- -->
@@ -34,14 +34,16 @@ if (isset($_POST['time_out'])) {
 	$shift = mysqli_real_escape_string($conn, $_POST['shift']);
 	$date = mysqli_real_escape_string($conn, $_POST['date']);
 	$time = mysqli_real_escape_string($conn, $_POST['time']);
-	echo $sql = "UPDATE attendance_timesheet SET time_out = 'CURTIME()' WHERE emp_id = $emp_id";
+	date_default_timezone_set('Asia/Kolkata');
+	$date_clicked = date('Y-m-d H:i:s');;
+    $sql = "UPDATE attendance_timesheet SET time_out = '$date_clicked' WHERE emp_id = $emp_id";
 
 	if (mysqli_query($conn, $sql)) {
 		echo "Sign Out successfully !";
 	} else {
 		echo "Error: " . $sql . ":-" . mysqli_error($conn);
 	}
-	mysqli_close($conn);
+	// mysqli_close($conn);
 }
 ?>
 <!DOCTYPE html>
