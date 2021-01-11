@@ -9,15 +9,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <!-- <a href="http://www.phpzag.com" class="navbar-brand">PHPZAG.COM</a> -->
+          <a href="../logout.php" class="navbar-brand">Home</a>
         </div>
-        <!-- <div class="navbar-collapse collapse">
+        <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="http://www.phpzag.com">Home</a></li>
+            <li class="active"><a href="../userattendance.php">Back</a></li>
            
           </ul>
          
-        </div> -->
+        </div>
       </div>
     </div>
 	

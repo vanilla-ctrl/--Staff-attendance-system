@@ -1,11 +1,12 @@
 <?php 
 include('header.php');
+session_start();
 ?>
 <title>Attendance Calendar</title>
 <link rel="stylesheet" href="css/calendar.css">
 <?php include('container.php');?>
 <div class="container">	
-	<h2>View Monthly Attendance</h2>	
+	<h2> Monthly Attendance View</h2>	
 	<div class="page-header">
 		<div class="pull-right form-inline">
 			<div class="btn-group">
@@ -21,14 +22,14 @@ include('header.php');
 			</div>
 		</div>
 		<h3>January 2021</h3>
-		<small>OOOOOOOOOOOO</small>
+		<small>CLICK ON TODAY AND CHECK YOUR ATTENDANCE STATUS </small>
 	</div>
 	<div class="row">
 		<div class="col-md-9">
 			<div id="showEventCalendar"></div>
 		</div>
 		<div class="col-md-3">
-			<h4>All Events List</h4>
+			<h4>Attendance Status</h4>
 			<ul id="eventlist" class="nav nav-list"></ul>
 		</div>
 	</div>	
